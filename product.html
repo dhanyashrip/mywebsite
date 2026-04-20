@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Our Art Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#f4f6fb;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    backdrop-filter: blur(8px);
+    background:rgba(255,255,255,0.6);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+}
+header h2{
+    font-family:'Playfair Display', serif;
+    letter-spacing:1px;
+}
+nav a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+nav a:hover{ color:#457b9d; }
+
+/* HERO */
+.hero{
+    height:75vh;
+    background:linear-gradient(to right,#1d3557,#457b9d,#a8dadc);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+.hero h1{
+    font-size:50px;
+    font-family:'Playfair Display', serif;
+    margin-bottom:10px;
+}
+.hero p{
+    font-size:20px;
+    max-width:600px;
+    opacity:0.9;
+}
+
+/* SECTIONS */
+.section{
+    max-width:1100px;
+    margin:auto;
+    padding:70px 20px;
+}
+.section h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:34px;
+    font-family:'Playfair Display', serif;
+    color:#1d3557;
+}
+
+/* ABOUT TEXT */
+.about{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* ART GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    transform:translateY(40px);
+    opacity:0;
+}
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    transition:0.5s;
+}
+.card:hover img{
+    transform:scale(1.08);
+}
+.overlay{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:20px;
+    background:linear-gradient(transparent,rgba(0,0,0,0.7));
+    color:white;
+}
+.overlay h3{
+    margin:0;
+    font-family:'Playfair Display', serif;
+}
+
+/* TRUST BOX */
+.trust{
+    background:white;
+    border-radius:14px;
+    padding:40px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+}
+
+/* BACK BUTTON */
+.back-container{
+    text-align:center;
+    margin:40px 0 20px;
+}
+
+.back-btn{
+    padding:14px 32px;
+    font-size:16px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(to right,#1d3557,#457b9d);
+    color:white;
+    cursor:pointer;
+    font-weight:500;
+    letter-spacing:0.5px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+.back-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 24px rgba(0,0,0,0.3);
+    background:linear-gradient(to right,#16324f,#356f89);
+}
+
+/* FOOTER */
+footer{
+    background:#1d3557;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>MyShop</h2>
+<nav>
+
+</nav>
+</header>
+
+<section class="hero">
+<h1>Art That Speaks!</h1>
+<p>We bring handcrafted paintings and expressive sketches to homes that value creativity.</p>
+</section>
+
+<section class="section">
+<h2>Our Story</h2>
+<p class="about">
+Our store was created with a simple idea — art should not be limited to galleries.
+We connect passionate artists with people who want meaningful artwork for their homes.
+Each painting and sketch you see here is created with dedication, emotion, and craftsmanship.
+We customize the paintings or sketches of choice and also frame it according to your specification.
+</p>
+</section>
+
+<section class="section">
+<h2>Our Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="2.jpeg">
+<div class="overlay">
+<h3>Canvas Paintings</h3>
+</div>
+</div>
+
+<div class="card">
+<img src="1.jpeg">
+<div class="overlay">
+<h3>Pencil Sketches</h3>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Why Choose Us</h2>
+<div class="trust">
+✔ Original handmade artwork<br>
+✔ Custom portrait orders available<br>
+✔ Secure checkout & safe packaging<br>
+✔ Delivery across the country<br>
+✔ Supporting independent artists
+</div>
+</section>
+
+<!-- NEW DESIGNED BACK BUTTON -->
+<div class="back-container">
+    <a href="index.html">
+        <button class="back-btn">← Back to Home</button>
+    </a>
+</div>
+
+<footer>
+© ArtStore | Crafted with passion 🎨
+</footer>
+
+<script>
+const cards=document.querySelectorAll(".card");
+function reveal(){
+cards.forEach(card=>{
+const pos=card.getBoundingClientRect().top;
+if(pos<window.innerHeight-60){
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+card.style.transition="0.7s";
+}
+});
+}
+window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal);
+</script>
+
+</body>
+</html>

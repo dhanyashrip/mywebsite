@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – ArtStore</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:#f4f6fb;
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.05);
+}
+header h2{
+    font-family:'Playfair Display', serif;
+}
+
+/* HERO */
+.hero{
+    height:45vh;
+    background:linear-gradient(to right,#1d3557,#457b9d,#a8dadc);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+.hero h1{
+    font-size:42px;
+    font-family:'Playfair Display', serif;
+}
+
+/* MAIN */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px 60px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+/* CONTACT INFO */
+.info{
+    background:white;
+    padding:35px;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+.info h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:20px;
+    color:#1d3557;
+}
+
+/* SOCIAL */
+.social{
+    margin-top:20px;
+}
+.social a{
+    display:inline-block;
+    margin-right:12px;
+    padding:10px 14px;
+    background:#457b9d;
+    color:white;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:14px;
+}
+.social a:hover{ background:#1d3557; }
+
+/* FORM */
+.form-box{
+    background:white;
+    padding:35px;
+    border-radius:14px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+.form-box h2{
+    font-family:'Playfair Display', serif;
+    margin-bottom:20px;
+    color:#1d3557;
+}
+.form-group{
+    margin-bottom:18px;
+}
+label{
+    display:block;
+    font-weight:500;
+    margin-bottom:6px;
+}
+input, textarea{
+    width:100%;
+    padding:12px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    font-size:15px;
+}
+textarea{ height:120px; resize:none; }
+
+/* BUTTON */
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(to right,#1d3557,#457b9d);
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* SUCCESS */
+.success{
+    display:none;
+    margin-top:15px;
+    color:green;
+    font-weight:500;
+}
+
+/* BACK BUTTON AT END */
+.back-end{
+    text-align:center;
+    margin:20px 0 40px;
+}
+.back-btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:8px;
+    background:linear-gradient(to right,#1d3557,#457b9d);
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+.back-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer{
+    background:#1d3557;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.container{
+    grid-template-columns:1fr;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>MyShop</h2>
+</header>
+
+<section class="hero">
+<div>
+<h1>Contact Us</h1>
+<p>Have a custom portrait request or question? We'd love to hear from you.</p>
+</div>
+</section>
+
+<section class="container">
+
+<div class="info">
+<h2>Get in Touch</h2>
+<p>📍 Hubballi, Karnataka, India</p>
+<p>📞 +91 7406131467</p>
+<p>📧 ArtStore@gmail.com</p>
+
+<div class="social">
+<a href="#">Instagram</a>
+<a href="#">WhatsApp</a>
+</div>
+</div>
+
+<div class="form-box">
+<h2>Send Message</h2>
+
+<div class="form-group">
+<label>Name</label>
+<input type="text" id="name">
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" id="email">
+</div>
+
+<div class="form-group">
+<label>Message</label>
+<textarea id="message"></textarea>
+</div>
+
+<button onclick="sendMessage()">Send Message</button>
+<div class="success" id="successMsg">✔ Message sent successfully! We will contact you soon.</div>
+
+</div>
+
+</section>
+
+<!-- BACK BUTTON AT END -->
+<div class="back-end">
+<a href="index.html" class="back-btn">← Back to Home</a>
+</div>
+
+<footer>
+© ArtStore | Designed for creative souls 🎨
+</footer>
+
+<script>
+function sendMessage(){
+const name=document.getElementById("name").value;
+const email=document.getElementById("email").value;
+const msg=document.getElementById("message").value;
+
+if(!name || !email || !msg){
+alert("Please fill all fields");
+return;
+}
+
+document.getElementById("successMsg").style.display="block";
+
+document.getElementById("name").value="";
+document.getElementById("email").value="";
+document.getElementById("message").value="";
+}
+</script>
+
+</body>
+</html>
