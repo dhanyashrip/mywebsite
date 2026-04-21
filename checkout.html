@@ -37,22 +37,9 @@ h2{
   gap:30px;
 }
 
-.price{
-  font-size:24px;
-  color:#e63946;
-  margin:10px 0;
-}
-
 .quantity input{
   width:80px;
   padding:6px;
-}
-
-.total{
-  font-size:22px;
-  font-weight:bold;
-  margin-top:12px;
-  color:#1d3557;
 }
 
 /* FORM */
@@ -89,6 +76,7 @@ textarea{
 
 /* PAYMENT */
 .payment-box{
+    background:#eeeeee00;
     padding:30px;
     width:450px;
     margin:auto;
@@ -126,16 +114,15 @@ textarea{
     background:#1b2f4d;
 }
 
-/* SUCCESS MESSAGE */
+/* Success Message */
 .success-message{
   display:none;
   margin-top:30px;
-  padding:18px;
-  text-align:center;
   background:#d4edda;
   color:#155724;
-  border:1px solid #c3e6cb;
+  padding:18px;
   border-radius:10px;
+  text-align:center;
   font-size:22px;
   font-weight:bold;
 }
@@ -152,16 +139,10 @@ textarea{
       <h1>Handmade Sketches and Painting</h1>
       <p>Original canvas artwork</p>
 
-      <div class="price">
-        Price: ₹2500
-      </div>
-
       <div class="quantity">
         <label>Quantity</label>
         <input type="number" id="quantity" value="1" min="1">
       </div>
-
-     
 
     </div>
   </div>
@@ -237,30 +218,22 @@ textarea{
 
   </div>
 
-  <!-- SUCCESS MESSAGE -->
+  <!-- Success Message -->
   <div id="successMessage" class="success-message">
-    🎉 Order Placed Successfully!
+      🎉 Order Placed Successfully!
   </div>
 
 </div>
 
 <script>
-const price = 2500;
-const quantity = document.getElementById("quantity");
-const total = document.getElementById("total");
-
-quantity.addEventListener("input",()=>{
-  total.innerText = price * quantity.value;
-});
-
 function placeOrder(){
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const address = document.getElementById("address").value;
+  const name=document.getElementById("name").value;
+  const email=document.getElementById("email").value;
+  const phone=document.getElementById("phone").value;
+  const address=document.getElementById("address").value;
 
-  const payment =
+  const payment=
   document.querySelector('input[name="payment"]:checked');
 
   if(!name || !email || !phone || !address || !payment){
@@ -269,9 +242,9 @@ function placeOrder(){
   }
 
   // Show success message
-  document.getElementById("successMessage").style.display = "block";
+  document.getElementById("successMessage").style.display="block";
 
-  // Optional: reset form fields
+  // Optional: reset form
   document.getElementById("name").value="";
   document.getElementById("email").value="";
   document.getElementById("phone").value="";
@@ -279,13 +252,12 @@ function placeOrder(){
   document.getElementById("city").value="";
   document.getElementById("state").value="";
   document.getElementById("pincode").value="";
-  
+
   document.querySelectorAll('input[name="payment"]').forEach(r=>{
     r.checked=false;
   });
 
-  quantity.value=1;
-  total.innerText=2500;
+  document.getElementById("quantity").value=1;
 }
 </script>
 
